@@ -1,0 +1,22 @@
+- name: Red Hat Helm Chart Certifier
+  # You may pin to the exact commit or the version.
+  # uses: redhat-actions/chart-verifier@3ac4939c3aa425910cc4fc70860c4913d746c9ca
+  uses: redhat-actions/chart-verifier@v1.2
+  with:
+    # URI to Helm Chart to verify. This can be a path to the chart directory, or an http(s) URI.
+    chart_uri: 
+    # {all,annotations,digests,metadata,results}
+    report_type: # default is results
+    # Chart checks profile to run.
+See https://github.com/redhat-certification/chart-verifier/tree/main/config for a list of profiles.
+
+    profile_name: # optional
+    # Version of profile_name to run. If profile_name is set but profile_version is not, the latest version is used.
+    profile_version: # optional
+    # Extra arguments to pass to the 'verify' command. See 'chart-verifier verify --help' for more info.
+
+    verify_args: # optional
+    # If true, exit with code 1 if at least one check is failed.
+Else, always exit with code 0 - ie, never fail the workflow step.
+
+    fail: # optional, default is true
